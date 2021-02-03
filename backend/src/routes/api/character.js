@@ -18,7 +18,7 @@ router.post("/", controllerCharacter.create);
 
 // @routes PUT api/characters/:id
 // @description Update a character
-router.put("/:id", controllerCharacter.update);
+router.patch("/:id", controllerCharacter.update);
 
 // @routes DELETE api/characters/:id
 // @description Delete a character
