@@ -1,5 +1,5 @@
 import React from 'react';
-import CardCharacter from "../../components/CardComponent";
+import CardNewCharacter from "../../components/CardNewComponent";
 import * as characterService from "../../services/characterService";
 
 
@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div className="page-content">
-      <CardCharacter onSubmit={persistData}/>
+      <CardNewCharacter onSubmit={persistData}/>
     </div>
   )
 }

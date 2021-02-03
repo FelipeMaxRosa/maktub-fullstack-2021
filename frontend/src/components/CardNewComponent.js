@@ -5,10 +5,10 @@ import {
 import {
   StyledCard, StyledSectionTitle, StyledForm,
   StyledFormControl, StyledHeader, StyledTextField, StyledDivCardButtons
-} from "../components/styled";
+} from "./styled";
 
 
-export default function CardCharacter({onSubmit}) {
+export default function CardNewCharacter({onSubmit}) {
   const [name, setName] = useState('');
   const [shortDescription, setShortDescription] = useState('');
   const [fullDescription, setFullDescription] = useState('');
@@ -24,7 +24,7 @@ export default function CardCharacter({onSubmit}) {
         nome: name,
         descricao_curta: shortDescription,
         descricao_completa: fullDescription,
-        url_imagem: imageUrl
+        url_imagem: encodeURI(imageUrl)
       }
 
       onSubmit(newCharacter);
@@ -55,8 +55,8 @@ export default function CardCharacter({onSubmit}) {
 
   const clearStates = () => {
     setName('');
-    shortDescription('');
-    fullDescription('');
+    setShortDescription('');
+    setFullDescription('');
     setImageUrl('');
     setIsValidate(false);
   }

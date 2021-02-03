@@ -31,14 +31,14 @@ const NavBar = () => {
   const open = Boolean(anchorEl);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
-  console.log(isMobile);
+  // console.log(isMobile);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleMenuClick = (pageURL) => {
-    setAnchorEl(pageURL);
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   return (
@@ -55,11 +55,14 @@ const NavBar = () => {
                 <IconButton
                   edge="start"
                   onClick={handleMenu}
+                  aria-haspopup="true"
+                  aria-controls="menu-appbar"
                   className={classes.menuButton}
                   color="inherit"
                   aria-label="menu">
                   <MenuIcon />
                 </IconButton>
+                
                 <Menu
                   id="menu-appbar"
                   anchorEl={anchorEl}
@@ -73,18 +76,18 @@ const NavBar = () => {
                     horizontal: 'right',
                   }}
                   open={open}
-                  onClose={() => setAnchorEl(null)}
+                  onClose={handleClose}
                 >
-                <MenuItem>
-                  <StyledLink to="/character">
-                    Cadastrar
-                  </StyledLink>
-                </MenuItem>
-                <MenuItem>
-                  <StyledLink to="/characters">
-                    Listar
-                  </StyledLink>
-                </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <StyledLink to="/character">
+                      Cadastrar
+                    </StyledLink>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
+                    <StyledLink to="/characters">
+                      Listar
+                    </StyledLink>
+                  </MenuItem>
                 </Menu>
               </>
               ) : (
