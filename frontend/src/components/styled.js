@@ -50,4 +50,8 @@ export const StyledDivCardButtons = styled.div`
   margin-top: 16px;
 `;
 
+export const StyledGroupCards = styled.div`
+
+`;
+
 
