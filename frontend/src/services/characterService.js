@@ -20,4 +20,4 @@ const remove = (id) => {
   return http.delete(`/api/character/${id}`);
 };
 
-export { get, getAll, create, update, remove};
+export { get, getAll, create, update, remove };

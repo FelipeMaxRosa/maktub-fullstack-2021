@@ -1,15 +1,15 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
-import { Home } from "./pages/Home";
-import { OtherPage } from "./pages/Page 2";
+import Home from "./pages/Character";
+import OtherPage from "./pages/Page 2";
 
 function Routes() {
   return (
-    <BrowserRouter>
-      <Route path="/" exact component={Home} />
-      <Route path="/other" component={OtherPage} />
-    </BrowserRouter>
+      <Switch>
+        <Route path="/character" component={Home} />
+        <Route path="/other" component={OtherPage} />
+      </Switch>
   );
 }
 

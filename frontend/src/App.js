@@ -1,11 +1,16 @@
 import Routes from './routes';
 import './App.css';
+import NavBar from './components/NavBarComponent';
+import { BrowserRouter, Router, Switch } from 'react-router-dom';
 
-function App() {
+function App(props) {
   return (
-    <div>
-      <Routes />
-    </div>
+    <>
+      <BrowserRouter>
+        <NavBar />
+        <Routes />
+      </BrowserRouter>
+    </>
   );
 }
 
