@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Card, TextField, FormControl, Grid } from '@material-ui/core';
+import { Card, TextField, FormControl, Grid, Paper } from '@material-ui/core';
 import { Link } from "react-router-dom";
 
 export const StyledLink = styled(Link)`
@@ -60,11 +60,19 @@ export const StyledDivCardButtons = styled.div`
 `;
 
 export const StyledGroupCards = styled(Grid)`
-  /* margin: 16px 0 ; */
+  margin: 0 ;
   width: 100%;
   padding: 0;
   display: flex;
   flex-grow: 1;
+`;
+
+export const StyledGroupDetails = styled(Grid)`
+  margin: 0 ;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column
 `;
 
 export const StyledDivGroupCards = styled.div`
@@ -85,7 +93,67 @@ export const StyledFooterPagination = styled.footer`
   margin-top: 16px;
 `;
 
+export const StyledHeaderDetails = styled.header`
+  /* margin-bottom: 16px; */
+`;
+
 export const StyledGrid = styled(Grid)`
   margin: 12px 0;
   padding: 0;
+`;
+
+export const StyledGridDetails = styled(Grid)`
+  margin: 0;
+  padding: 0;
+`;
+
+export const StyledButtonLink = styled(Link)`
+  color: #fff;
+  background-color: #3f51b5;
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  border: 0;
+  cursor: pointer;
+  margin: 0;
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  vertical-align: middle;
+  justify-content: center;
+  text-decoration: none;
+`;
+
+export const StyledImgDetails = styled.img`
+  width: 100%;
+  border-radius: 7px;
+`;
+
+export const StyledTitleDetails = styled.h3`
+  margin-bottom: 8px;
+`;
+
+export const StyledSubtitleDetails = styled.span`
+  display: block;
+  color: #b1b1b1;
+`;
+
+export const StyledPaperDetails = styled(Paper)`
+  margin-top: 16px;
+  padding: 16px;
+`;
+
+export const StyledRow = styled.div`
+  display: flex;
+  flex-direction: row;
 `;

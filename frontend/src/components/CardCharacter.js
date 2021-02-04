@@ -1,12 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-  Card, CardHeader, CardMedia, Button,
-  CardContent, Avatar, Typography, CardActions
+  CardHeader, CardMedia, Button, Avatar
 } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
 
-import { StyledDivCardButtons, StyledCard } from "./styled";
+import { StyledDivCardButtons, StyledCard, StyledButtonLink } from "./styled";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -38,7 +37,7 @@ export default function CardCharacter({ value, openModal }) {
   const classes = useStyles();
 
   const handleClick = (character) => {
-    openModal(character);
+    console.log(character);
   }
 
   return (
@@ -60,9 +59,9 @@ export default function CardCharacter({ value, openModal }) {
       />
 
       <StyledDivCardButtons>
-        <Button variant="contained" color="primary" onClick={() => handleClick(value)}>
+        <StyledButtonLink variant="contained" color="primary" to={`characters/${id}`} >
           Detalhes
-        </Button>
+        </StyledButtonLink>
       </StyledDivCardButtons>
     </StyledCard>
   );

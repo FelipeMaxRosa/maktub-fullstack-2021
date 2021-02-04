@@ -12,7 +12,7 @@ module.exports = {
   async findOne(req, res) {
     const myId = req.params.id;
     try {
-      const character = await db.where({ id: myId }).table('characters');
+      const character = await db.where({ id: myId }).table('characters').first();
 
       if (character.length == 0) {
         res

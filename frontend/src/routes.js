@@ -2,13 +2,15 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import Home from "./pages/Character";
-import OtherPage from "./pages/CharactersList";
+import CharacterList from "./pages/CharactersList";
+import CharacterDetails from "./pages/CharacterDetails";
 
 function Routes() {
   return (
       <Switch>
         <Route path="/character" component={Home} />
-        <Route path="/characters" component={OtherPage} />
+        <Route exact path="/characters" component={CharacterList} />
+        <Route path="/characters/:id" component={CharacterDetails} />
       </Switch>
   );
 }
