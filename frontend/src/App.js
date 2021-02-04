@@ -1,9 +1,9 @@
 import Routes from './routes';
 import './App.css';
 import NavBar from './components/NavBarComponent';
-import { BrowserRouter, Router, Switch } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-function App(props) {
+function App() {
   return (
     <>
       <BrowserRouter>

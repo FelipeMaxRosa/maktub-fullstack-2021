@@ -6,7 +6,7 @@ import {
 } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
 
-import { StyledDivCardButtons } from "./styled";
+import { StyledDivCardButtons, StyledCard } from "./styled";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -32,13 +32,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function CardCharacter({ value }) {
+export default function CardCharacter({ value, openModal }) {
   const { id, nome, descricao_curta, descricao_completa, url_imagem: url } = value;
   const firstLetter = nome.split('');
   const classes = useStyles();
 
+  const handleClick = (character) => {
+    openModal(character);
+  }
+
   return (
-    <Card className={classes.root}>
+    <StyledCard>
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
@@ -55,19 +59,11 @@ export default function CardCharacter({ value }) {
         title="Paella dish"
       />
 
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {descricao_completa}
-        </Typography>
-      </CardContent>
-
-      <CardActions>
-        <StyledDivCardButtons>
-          <Button variant="contained" color="primary">
-            Detalhes
-          </Button>
-        </StyledDivCardButtons>
-      </CardActions>
-    </Card>
+      <StyledDivCardButtons>
+        <Button variant="contained" color="primary" onClick={() => handleClick(value)}>
+          Detalhes
+        </Button>
+      </StyledDivCardButtons>
+    </StyledCard>
   );
 }

@@ -3,7 +3,7 @@ const db = require('../database/connection');
 module.exports = {
   async findAll(req, res) {
     try {
-      const characters = await db.select('*').from('characters');
+      const characters = await db.select().table('characters');
       res.send(characters);
     } catch (error) {
       res.status(500).send({ message: error });

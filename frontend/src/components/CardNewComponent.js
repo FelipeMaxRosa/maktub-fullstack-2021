@@ -3,9 +3,10 @@ import {
   Button, Input, InputLabel,
 } from '@material-ui/core';
 import {
-  StyledCard, StyledSectionTitle, StyledForm,
+  StyledCard, StyledSectionTitle, StyledForm, StyledFormCard,
   StyledFormControl, StyledHeader, StyledTextField, StyledDivCardButtons
 } from "./styled";
+import { Link } from 'react-router-dom';
 
 
 export default function CardNewCharacter({onSubmit}) {
@@ -58,11 +59,10 @@ export default function CardNewCharacter({onSubmit}) {
     setShortDescription('');
     setFullDescription('');
     setImageUrl('');
-    setIsValidate(false);
   }
 
   return (
-    <StyledCard>
+    <StyledFormCard>
       <StyledForm>
         <StyledHeader>
           <StyledSectionTitle>Novo Personagem</StyledSectionTitle>
@@ -95,12 +95,12 @@ export default function CardNewCharacter({onSubmit}) {
           <Input value={imageUrl} id="imageUrl" onChange={handleChange} name="imageUrl" required/>
         </StyledFormControl>   
       </StyledForm>
-    {/*  */}
+
       <StyledDivCardButtons>
         <Button onClick={handleSubmit} variant="contained" color="primary">
           Cadastrar
         </Button>
       </StyledDivCardButtons>
-    </StyledCard>
+    </StyledFormCard>
   );
 }
