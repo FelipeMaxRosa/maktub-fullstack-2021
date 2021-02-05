@@ -59,7 +59,7 @@ export default function CardCharacter({ value, openModal }) {
       />
 
       <StyledDivCardButtons>
-        <StyledButtonLink variant="contained" color="primary" to={`characters/${id}`} >
+        <StyledButtonLink primary variant="contained" color="primary" to={`characters/${id}`} >
           Detalhes
         </StyledButtonLink>
       </StyledDivCardButtons>

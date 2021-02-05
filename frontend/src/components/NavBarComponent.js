@@ -9,7 +9,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
-import { StyledLink, StyledMenuLink, StyledDivMenuSM } from "../components/styled";
+import { StyledLink, StyledMenuLink, StyledDivMenuSM, StyledNavLink } from "../components/styled";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -79,19 +79,19 @@ const NavBar = () => {
                   onClose={handleClose}
                 >
                   <MenuItem onClick={handleClose}>
-                    <StyledLink to="/">
+                    <StyledNavLink to="/">
                       Home
-                    </StyledLink>
+                    </StyledNavLink>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <StyledLink to="/character">
+                    <StyledNavLink to="/character">
                       Cadastrar
-                    </StyledLink>
+                    </StyledNavLink>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <StyledLink to="/characters">
+                    <StyledNavLink to="/characters">
                       Lista Completa
-                    </StyledLink>
+                    </StyledNavLink>
                   </MenuItem>
                 </Menu>
               </>

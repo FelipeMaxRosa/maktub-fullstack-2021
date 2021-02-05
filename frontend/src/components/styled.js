@@ -8,6 +8,10 @@ export const StyledLink = styled(Link)`
   color: #fff;
 `;
 
+export const StyledNavLink = styled(Link)`
+  text-decoration: none;
+`;
+
 export const StyledMenuLink = styled(Link)`
   text-decoration: none;
   color: #fff !important;
@@ -31,10 +35,10 @@ export const StyledFormControl = styled(FormControl)`
 `;
 
 export const StyledCard = styled(Card)`
-  /* padding: 16px; */
   min-width: 250px; 
   max-width: 345px;
   height: 334px;
+  background-color: #fafafa;
 `;
 
 export const StyledFormCard = styled(Card)`
@@ -109,8 +113,8 @@ export const StyledGridDetails = styled(Grid)`
 `;
 
 export const StyledButtonLink = styled(Link)`
+  background: ${props => props.primary ? "#3f51b5" : "rgb(220, 0, 78)"};
   color: #fff;
-  background-color: #3f51b5;
   box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
   padding: 6px 16px;
   font-size: 0.875rem;
@@ -133,18 +137,23 @@ export const StyledButtonLink = styled(Link)`
   vertical-align: middle;
   justify-content: center;
   text-decoration: none;
+
+  &:hover {
+    background: ${props => props.primary ? "rgb(17, 82, 147)" : "rgb(154, 0, 54)"};
+    box-shadow: 2px 2px 5px darkgray;
+  }
 `;
 
 export const StyledButtonBigLink = styled.div`
+  background: ${props => props.primary ? "#3f51b5" : "rgb(220, 0, 78)"};
   color: #fff;
-  background-color: #3f51b5;
   box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
   padding: 6px 16px;
   font-size: 0.875rem;
   width: 350px;
   height: 60px;
   box-sizing: border-box;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  /* transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; */
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -164,7 +173,7 @@ export const StyledButtonBigLink = styled.div`
   text-decoration: none;
   transition: 200ms;
   &:hover {
-    background: #2f31a5;
+    background: ${props => props.primary ? "rgb(17, 82, 147)" : "rgb(154, 0, 54)"};
     box-shadow: 2px 2px 5px black;
     font-size: 20px;
   }

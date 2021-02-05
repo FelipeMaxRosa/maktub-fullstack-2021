@@ -25,16 +25,16 @@ export default function CharacterDetails(props) {
     }
 
     fetchCharacters();
-  }, [id]);
+  }, []);
 
   const GroupButtonsXS = () => {
     return (
-      <StyledGrid item xs={12} sm={6}>
+      <StyledGrid item xs={12} sm={6} container justify="flex-end">
         <StyledButtonLink
-          variant="contained" color="primary"
-          style={{marginRight: "12px"}} to="/character">Cadastrar</StyledButtonLink>
+          variant="contained" primary
+          style={{marginRight: "12px"}} to="/character">Novo Personagem</StyledButtonLink>
         <StyledButtonLink
-          variant="contained" color="primary"
+          variant="contained"
           to="/characters">Voltar</StyledButtonLink>
       </StyledGrid>
     )
@@ -44,11 +44,11 @@ export default function CharacterDetails(props) {
     return (
       <StyledGrid item xs={12} sm={6} container
         direction="column" justify="center" alignItems="center">
-        <StyledButtonBigLink as={Link} to="/character">
-          <StyledLink variant="contained" color="primary">Cadastrar</StyledLink> 
+        <StyledButtonBigLink primary as={Link} to="/character">
+          <StyledLink variant="contained" to="/character">Novo Personagem</StyledLink> 
         </StyledButtonBigLink>
         <StyledButtonBigLink as={Link} to="/characters">
-          <StyledLink variant="contained" color="primary">Voltar</StyledLink> 
+          <StyledLink variant="contained" to="/characters">Voltar</StyledLink> 
         </StyledButtonBigLink>
       </StyledGrid>
     )

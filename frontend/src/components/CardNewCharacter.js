@@ -96,7 +96,7 @@ export default function CardNewCharacter({onSubmit}) {
         </StyledFormControl>   
       </StyledForm>
 
-      <StyledDivCardButtons>
+      <StyledDivCardButtons style={{paddingRight: 0}}>
         <Button onClick={handleSubmit} variant="contained" color="primary">
           Salvar
         </Button>

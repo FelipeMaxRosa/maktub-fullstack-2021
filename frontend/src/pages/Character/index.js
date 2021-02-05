@@ -1,9 +1,9 @@
 import React from 'react';
-import CardNewCharacter from "../../components/CardNewComponent";
+import CardNewCharacter from "../../components/CardNewCharacter";
 import * as characterService from "../../services/characterService";
 
 
-export default function Home() {
+export default function NewCharacterPage() {
   const persistData = async (newCharacter) => {
     console.log(newCharacter);
     try {
