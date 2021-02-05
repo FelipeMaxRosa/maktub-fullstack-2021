@@ -1,4 +1,4 @@
-# Maktu Personagens Favoritos
+# Maktub Personagens Favoritos
 
 ## Objetivo
 Este projeto tem o objetivo que desenvolver uma aplicação que fornece ao usuários uma lista de personagens
