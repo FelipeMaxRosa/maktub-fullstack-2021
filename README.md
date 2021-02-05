@@ -17,7 +17,7 @@ as pastas forem instaladas siga para o próximo passo.
 
 ### Backend
 O backend da aplicação foi desenvolvido em Node.js, Express e Knex para conexão com o banco de dados MySql e pode ser iniciado acessando a pasta "backend" via terminal e rodando a seguinda instrução na linha de comando:
-<code>npm run start</code>
+<code>npm run server</code>
 
 ### Frontend
 O frontend da aplicação foi desenvolvido em React.js, Material UI e Styled Components e pode ser iniciado acessando a pasta "frontend" via terminal e rodando a seguinda instrução na linha de comando:
