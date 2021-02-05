@@ -5,10 +5,10 @@ Este projeto tem o objetivo que desenvolver uma aplicação que fornece ao usuá
 favoritos e informações como nome, descrição resumida, descrição completa e foto.
 
 ### Instalação
-Ao baixar o repositório pelo código:
+Ao baixar o repositório pelo código:<br/>
 <code>git clone https://github.com/FelipeMaxRosa/maktub-fullstack-2021.git</code>
 
-acesse a pasta (backend) do repositório clonado e execute o seguinte comando para instalar todas as dependências do projeto:
+acesse a pasta (backend) do repositório clonado e execute o seguinte comando para instalar todas as dependências do projeto:<br/>
 <code>npm install</code>
 
 logo em seguida acesse a pasta (frontend) e execute o mesmo comando, quando todas as dependências de ambas
