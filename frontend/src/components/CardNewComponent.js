@@ -98,7 +98,7 @@ export default function CardNewCharacter({onSubmit}) {
 
       <StyledDivCardButtons>
         <Button onClick={handleSubmit} variant="contained" color="primary">
-          Cadastrar
+          Salvar
         </Button>
       </StyledDivCardButtons>
     </StyledFormCard>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
-  CardHeader, CardMedia, Button, Avatar
+  CardHeader, CardMedia, Avatar
 } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
 

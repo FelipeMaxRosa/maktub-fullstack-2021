@@ -1,23 +1,23 @@
-import http from "../http/http-common";
+import api from "../api/api.config";
 
 const getAll = () => {
-  return http.get(`/api/character`);
+  return api.get(`/api/character`);
 };
 
 const get = (id) => {
-  return http.get(`/api/character/${id}`);
+  return api.get(`/api/character/${id}`);
 };
 
 const create = (data) => {
-  return http.post("/api/character", data);
+  return api.post("/api/character", data);
 };
 
 const update = (id, data) => {
-  return http.put(`/api/character/${id}`, data);
+  return api.put(`/api/character/${id}`, data);
 };
 
 const remove = (id) => {
-  return http.delete(`/api/character/${id}`);
+  return api.delete(`/api/character/${id}`);
 };
 
 export { get, getAll, create, update, remove };

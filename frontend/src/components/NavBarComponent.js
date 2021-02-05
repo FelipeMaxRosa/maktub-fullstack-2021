@@ -79,24 +79,32 @@ const NavBar = () => {
                   onClose={handleClose}
                 >
                   <MenuItem onClick={handleClose}>
+                    <StyledLink to="/">
+                      Home
+                    </StyledLink>
+                  </MenuItem>
+                  <MenuItem onClick={handleClose}>
                     <StyledLink to="/character">
                       Cadastrar
                     </StyledLink>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
                     <StyledLink to="/characters">
-                      Listar
+                      Lista Completa
                     </StyledLink>
                   </MenuItem>
                 </Menu>
               </>
               ) : (
                 <StyledDivMenuSM>
+                  <StyledMenuLink to="/">
+                    Home
+                  </StyledMenuLink>
                   <StyledMenuLink to="/character">
                     Cadastrar
                   </StyledMenuLink>
                   <StyledMenuLink to="/characters">
-                    Listar
+                    Lista Completa
                   </StyledMenuLink>
                 </StyledDivMenuSM>
                )

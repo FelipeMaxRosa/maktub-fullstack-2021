@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
+  color: #fff;
 `;
 
 export const StyledMenuLink = styled(Link)`
@@ -71,8 +72,8 @@ export const StyledGroupDetails = styled(Grid)`
   margin: 0 ;
   width: 100%;
   padding: 0;
-  display: flex;
-  flex-direction: column
+  /* display: flex; */
+  /* flex-direction: column */
 `;
 
 export const StyledDivGroupCards = styled.div`
@@ -125,13 +126,48 @@ export const StyledButtonLink = styled(Link)`
   border: 0;
   cursor: pointer;
   margin: 0;
-  display: inline-flex;
+  display: inline-block;
   position: relative;
   align-items: center;
   user-select: none;
   vertical-align: middle;
   justify-content: center;
   text-decoration: none;
+`;
+
+export const StyledButtonBigLink = styled.div`
+  color: #fff;
+  background-color: #3f51b5;
+  box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  width: 350px;
+  height: 60px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  border: 0;
+  cursor: pointer;
+  margin: 12px 0;
+  display: flex;
+  position: relative;
+  align-items: center;
+  user-select: none;
+  vertical-align: middle;
+  justify-content: center;
+  text-decoration: none;
+  transition: 200ms;
+  &:hover {
+    background: #2f31a5;
+    box-shadow: 2px 2px 5px black;
+    font-size: 20px;
+  }
 `;
 
 export const StyledImgDetails = styled.img`
