@@ -1,20 +1,33 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Button, Input, InputLabel,
 } from '@material-ui/core';
 import {
-  StyledCard, StyledSectionTitle, StyledForm, StyledFormCard,
+  StyledSectionTitle, StyledForm, StyledFormCard,
   StyledFormControl, StyledHeader, StyledTextField, StyledDivCardButtons
 } from "./styled";
-import { Link } from 'react-router-dom';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 export default function CardNewCharacter({onSubmit}) {
-  const [name, setName] = useState('');
+  const [nameCharacter, setNameCharacter] = useState('');
   const [shortDescription, setShortDescription] = useState('');
   const [fullDescription, setFullDescription] = useState('');
   const [imageUrl, setImageUrl] = useState('');
-  const [isValidate, setIsValidate] = useState(true);
+  const [isValidate, setIsValidate] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (nameCharacter.length > 0 && shortDescription.length > 0 && fullDescription.length > 0 && imageUrl.length > 0) {
+      setIsValidate(true);
+    } else {
+      setIsValidate(false);
+    }
+  }, [nameCharacter, shortDescription, fullDescription, imageUrl]);
 
 
   const handleSubmit = (event) => {
@@ -22,24 +35,34 @@ export default function CardNewCharacter({onSubmit}) {
 
     if (isValidate) {
       const newCharacter = {
-        nome: name,
+        nome: nameCharacter,
         descricao_curta: shortDescription,
         descricao_completa: fullDescription,
         url_imagem: encodeURI(imageUrl)
       }
 
       onSubmit(newCharacter);
+      setOpen(true);
+      setIsValidate(false);
       clearStates();
     }
   }
 
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+
   const handleChange = (event) => {
     const value = event.target.value;
     const name = event.target["name"];
-    
+        
     switch (name) {
-      case "name":
-        setName(value);
+      case "nameCharacter":
+        setNameCharacter(value);
         break;
       case "shortDescription":
         setShortDescription(value);
@@ -55,7 +78,7 @@ export default function CardNewCharacter({onSubmit}) {
   }
 
   const clearStates = () => {
-    setName('');
+    setNameCharacter('');
     setShortDescription('');
     setFullDescription('');
     setImageUrl('');
@@ -70,7 +93,7 @@ export default function CardNewCharacter({onSubmit}) {
 
         <StyledFormControl fullWidth>
           <InputLabel htmlFor="name">Nome</InputLabel>
-          <Input value={name} onChange={handleChange} id="name" name="name" required/>
+          <Input value={nameCharacter} onChange={handleChange} id="name" name="nameCharacter" required/>
         </StyledFormControl>
         
         <StyledFormControl fullWidth>
@@ -97,10 +120,15 @@ export default function CardNewCharacter({onSubmit}) {
       </StyledForm>
 
       <StyledDivCardButtons style={{paddingRight: 0}}>
-        <Button onClick={handleSubmit} variant="contained" color="primary">
+        <Button onClick={handleSubmit} variant="contained" color="primary" disabled={!isValidate}>
           Salvar
         </Button>
       </StyledDivCardButtons>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success">
+          This is a success message!
+        </Alert>
+      </Snackbar>
     </StyledFormCard>
   );
 }

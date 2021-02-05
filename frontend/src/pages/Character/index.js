@@ -9,7 +9,6 @@ export default function NewCharacterPage() {
     try {
       const result = await characterService.create(newCharacter);
       console.log(result.data);
-      alert("Personagem cadastrado com sucesso!");
 
     } catch (error) {
       console.log(error)
