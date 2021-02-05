@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {
   StyledButtonLink, StyledGrid, StyledPaperDetails, StyledGroupDetails,
   StyledImgDetails, StyledTitleDetails, StyledSubtitleDetails, StyledGridDetails,
-  StyledHeader, StyledButtonBigLink, StyledLink
-} from '../../components/styled';
-import { Link } from "react-router-dom";
+  StyledHeader, StyledButtonBigLink } from '../../components/styled';
 import * as characterService from "../../services/characterService";
 import { useTheme } from '@material-ui/core/styles';
 import useMediaQuery from "@material-ui/core/useMediaQuery";
@@ -25,13 +23,13 @@ export default function CharacterDetails(props) {
     }
 
     fetchCharacters();
-  }, []);
+  }, [id]);
 
   const GroupButtonsXS = () => {
     return (
       <StyledGrid item xs={12} sm={6} container justify="flex-end">
         <StyledButtonLink
-          variant="contained" primary
+          variant="contained" primary="true"
           style={{marginRight: "12px"}} to="/character">Novo Personagem</StyledButtonLink>
         <StyledButtonLink
           variant="contained"
@@ -44,11 +42,11 @@ export default function CharacterDetails(props) {
     return (
       <StyledGrid item xs={12} sm={6} container
         direction="column" justify="center" alignItems="center">
-        <StyledButtonBigLink primary as={Link} to="/character">
-          <StyledLink variant="contained" to="/character">Novo Personagem</StyledLink> 
+        <StyledButtonBigLink primary="true" to="/character">
+          Novo Personagem
         </StyledButtonBigLink>
-        <StyledButtonBigLink as={Link} to="/characters">
-          <StyledLink variant="contained" to="/characters">Voltar</StyledLink> 
+        <StyledButtonBigLink to="/characters">
+          Voltar
         </StyledButtonBigLink>
       </StyledGrid>
     )

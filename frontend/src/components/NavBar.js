@@ -9,7 +9,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
-import { StyledLink, StyledMenuLink, StyledDivMenuSM, StyledNavLink } from "../components/styled";
+import { StyledMenuLink, StyledDivMenuSM, StyledNavLink } from "./styled";
 
 const useStyles = makeStyles((theme) => ({
   root: {

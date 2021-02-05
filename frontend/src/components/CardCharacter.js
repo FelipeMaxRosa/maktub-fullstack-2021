@@ -1,13 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  CardHeader, CardMedia, Avatar
-} from '@material-ui/core';
+import { CardHeader, CardMedia, Avatar } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
-
 import { StyledDivCardButtons, StyledCard, StyledButtonLink } from "./styled";
 
 
+// Estilização padrão do componente do Material Ui
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -32,13 +30,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CardCharacter({ value, openModal }) {
-  const { id, nome, descricao_curta, descricao_completa, url_imagem: url } = value;
+  const { id, nome, descricao_curta, url_imagem: url } = value;
   const firstLetter = nome.split('');
   const classes = useStyles();
-
-  const handleClick = (character) => {
-    console.log(character);
-  }
 
   return (
     <StyledCard>
@@ -59,7 +53,7 @@ export default function CardCharacter({ value, openModal }) {
       />
 
       <StyledDivCardButtons>
-        <StyledButtonLink primary variant="contained" color="primary" to={`characters/${id}`} >
+        <StyledButtonLink primary="true" variant="contained" color="primary" to={`characters/${id}`} >
           Detalhes
         </StyledButtonLink>
       </StyledDivCardButtons>

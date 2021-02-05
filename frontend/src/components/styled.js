@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 import { Card, TextField, FormControl, Grid, Paper } from '@material-ui/core';
 import { Link } from "react-router-dom";
 
@@ -144,7 +143,7 @@ export const StyledButtonLink = styled(Link)`
   }
 `;
 
-export const StyledButtonBigLink = styled.div`
+export const StyledButtonBigLink = styled(Link)`
   background: ${props => props.primary ? "#3f51b5" : "rgb(220, 0, 78)"};
   color: #fff;
   box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
@@ -153,7 +152,6 @@ export const StyledButtonBigLink = styled.div`
   width: 350px;
   height: 60px;
   box-sizing: border-box;
-  /* transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms; */
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   font-size: 18px;
   font-weight: 500;

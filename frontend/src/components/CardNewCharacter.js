@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Button, Input, InputLabel,
-} from '@material-ui/core';
-import {
-  StyledSectionTitle, StyledForm, StyledFormCard,
-  StyledFormControl, StyledHeader, StyledTextField, StyledDivCardButtons
-} from "./styled";
+import { Button, Input, InputLabel } from '@material-ui/core';
+import { StyledSectionTitle, StyledForm, StyledFormCard,
+  StyledFormControl, StyledHeader, StyledTextField, StyledDivCardButtons } from "./styled";
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 
@@ -43,7 +39,6 @@ export default function CardNewCharacter({onSubmit}) {
 
       onSubmit(newCharacter);
       setOpen(true);
-      setIsValidate(false);
       clearStates();
     }
   }
@@ -82,6 +77,7 @@ export default function CardNewCharacter({onSubmit}) {
     setShortDescription('');
     setFullDescription('');
     setImageUrl('');
+    setIsValidate(false);
   }
 
   return (
