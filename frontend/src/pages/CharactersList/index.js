@@ -15,7 +15,10 @@ export default function CharacterList() {
     const fetchCharacters = async () => {
       const result = await characterService.getAll();
 
-      setCharacters(result.data);
+      // Ordena por nome de forma ascendente
+      const sortedResult = result.data.sort((a, b) => (a.nome > b.nome) ? 1 : -1);
+      console.log(sortedResult);
+      setCharacters(sortedResult);
     }
 
     fetchCharacters();
